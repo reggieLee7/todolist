@@ -1,0 +1,11 @@
+.taskItem{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #dedede;
+}
+.taskItem input{
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    margin-right:5px;
+}
