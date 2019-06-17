@@ -1,23 +1,23 @@
-.taskItem {
+.todoItem {
     height: 30px;
     line-height: 30px;
     border-bottom: 1px solid #dedede;
 }
 
-.taskItem input {
+.todoItem input {
     height: 15px;
     width: 15px;
     vertical-align: middle;
     margin-right: 5px;
 }
 
-.taskItem .anticon-close-circle {
+.todoItem .anticon-close-circle {
     float: right;
     margin-right: 20px;
     line-height: 30px;
     cursor: pointer;
 }
 
-.taskItem .anticon-close-circle:hover {
+.todoItem .anticon-close-circle:hover {
     color: #1890ff;
 }
