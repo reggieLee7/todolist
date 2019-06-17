@@ -1,41 +1,38 @@
 import React from 'react';
-import './App.css';
+import 'antd/dist/antd.css'
+import { Layout } from 'antd';
 import Header from './components/Header/Header';
-import TaskList from './components/TaskList/TaskList';
+import TodoList from './containers/TodoList';
+import AddTodoForm from './containers/AddTodo';
+import './App.css';
+
+const Content = Layout.Content;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      TaskList: [
-        {
-          title: 'Test task',
-          date: '2019-06-22',
-          finished: false,
-        },
-        {
-          title: 'Test task 2',
-          date: '2019-06-23',
-          finished: false,
-        },
-        {
-          title: 'Test task3',
-          date: '2019-06-20',
-          finished: true,
-        }
-      ]
+      modalVisible: false
     }
+    this.toggleAddTodoModal.bind(this);
   }
+  toggleAddTodoModal = () => {
+    this.setState({ modalVisible: !this.state.modalVisible });
+  }
+
   render() {
     return (
       <div className="app">
-        <Header />
-        <div className="main">
-          <div className="container">
-            <TaskList title="未完成" items={this.state.TaskList.filter(t=>t.finished===false)} />
-            <TaskList title="已完成" items={this.state.TaskList.filter(t=>t.finished===true)} />
-          </div>
-        </div>
+        <Layout>
+          <Header toggleAddTodoModal={this.toggleAddTodoModal} />
+          <Content>
+            <div className="container">
+              <TodoList title="未完成" isFinished={false} />
+              <TodoList title="已完成" isFinished={true} />
+            </div>
+          </Content>
+          <AddTodoForm modalVisible={this.state.modalVisible} toggleAddTodoModalFn={this.toggleAddTodoModal} />
+        </Layout>
       </div>
     );
   }

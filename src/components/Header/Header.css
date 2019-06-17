@@ -1,26 +1,14 @@
-.header {
-    background: #333;
-    height: 50px;
-    line-height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.header h2 {
+header h2 {
     color: #ffffff;
     float: left;
 }
-
-.header button {
-    background: transparent;
+header .plusSquare {
     color:#ffffff;
     float: right;
-    line-height: 50px;
+    line-height: 64px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 25px;
 }
-.header button:hover{
-    color: #dedede;
+header .plusSquare:hover{
+    opacity: 0.8;
 }
